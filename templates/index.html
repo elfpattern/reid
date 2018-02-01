@@ -1,0 +1,44 @@
+<!doctype = html>
+<html lang = "zh-CN">
+    <head>
+        <title>ReID Merge Tool</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href = "/static/main.css">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <div :class='{lmask: loading}'></div>
+            <div class="row">
+                <div class="left col-6">
+                    <div v-for="path in img1">
+                        <div class="imgdiv" :style="{'background-image': 'url(' + path + ')'}">
+                        </div>
+                    </div>
+                </div>
+                <div class="right col-6">
+                    <div v-for="path in img2">
+                        <div class="imgdiv" :style="{'background-image': 'url(' + path + ')'}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button @click="Begin">开始</button>
+                <button @click="Merge">是同一个人</button>
+                <button @click="Split">不是同一个人</button>
+                <button @click="FPL">左边是FP</button>
+                <button @click="FPR">右边是FP</button>
+                <button @click="FPA">全是FP</button>
+                <button @click="Save">保存</button>
+                <button @click="Reset">重置</button>
+            </div>
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.13.0/umd/popper.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+        <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+        <script src = "/static/main.js"></script>
+    </body>
+</html>
